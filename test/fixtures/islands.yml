@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Description: MyString
+  Destination_Id: 
+
+two:
+  Name: MyString
+  Description: MyString
+  Destination_Id: 
