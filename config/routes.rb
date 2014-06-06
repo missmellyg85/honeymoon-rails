@@ -1,5 +1,61 @@
 Rails.application.routes.draw do
 
+  get 'hotel_pictures/new'
+
+  get 'hotel_pictures/create'
+
+  get 'hotel_pictures/update'
+
+  get 'hotel_pictures/edit'
+
+  get 'hotel_pictures/destroy'
+
+  get 'hotel_pictures/index'
+
+  get 'hotel_pictures/show'
+
+  get 'hotels/new'
+
+  get 'hotels/create'
+
+  get 'hotels/update'
+
+  get 'hotels/edit'
+
+  get 'hotels/destroy'
+
+  get 'hotels/index'
+
+  get 'hotels/show'
+
+  get 'islands/new'
+
+  get 'islands/create'
+
+  get 'islands/update'
+
+  get 'islands/edit'
+
+  get 'islands/destroy'
+
+  get 'islands/index'
+
+  get 'islands/show'
+
+  get 'destinations/new'
+
+  get 'destinations/create'
+
+  get 'destinations/update'
+
+  get 'destinations/edit'
+
+  get 'destinations/destroy'
+
+  get 'destinations/index'
+
+  get 'destinations/show'
+
   root 'home#index'
   
   devise_for :admins
