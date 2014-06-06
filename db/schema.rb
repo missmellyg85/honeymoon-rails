@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606192742) do
+ActiveRecord::Schema.define(version: 20140606205654) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,24 +32,31 @@ ActiveRecord::Schema.define(version: 20140606192742) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "destinations", force: true do |t|
-    t.string   "Name"
-    t.string   "Path"
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotel_pictures", force: true do |t|
+    t.string   "path"
+    t.integer  "hotel_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hotels", force: true do |t|
-    t.string   "Name"
-    t.string   "Description"
-    t.string   "Island_Id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "island_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "islands", force: true do |t|
-    t.string   "Name"
-    t.string   "Description"
-    t.integer  "Destination_Id"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "destination_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
