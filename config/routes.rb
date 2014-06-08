@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-
+  resources :destinations
+  resources :islands
+  resources :hotels
+  resources :hotel_pictures
+  
   root 'home#index'
   
   devise_for :admins

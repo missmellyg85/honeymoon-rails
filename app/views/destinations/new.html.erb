@@ -1,0 +1,12 @@
+<h1>Destinations#new</h1>
+<p>Find me in app/views/destinations/new.html.erb</p>
+<%= form_for :destination, url: destinations_path do |f| %>
+<p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

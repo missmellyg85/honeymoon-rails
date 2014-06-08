@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyString
+  name: MyString
+  email: MyString
+  status: MyString
+  is_deleted: false
+
+two:
+  comment: MyString
+  name: MyString
+  email: MyString
+  status: MyString
+  is_deleted: false
