@@ -1,22 +1,24 @@
 class HotelPicturesController < ApplicationController
-  def new
-  end
+    before_action :authenticate_admin!
 
-  def create
-  end
+    def new
+    end
 
-  def update
-  end
+    def create
+    end
 
-  def edit
-  end
+    def update
+    end
 
-  def destroy
-  end
+    def edit
+    end
 
-  def index
-  end
+    def destroy
+    end
 
-  def show
-  end
+    def index
+    end
+
+    def show
+    end
 end
