@@ -8,7 +8,7 @@ class IslandsController < ApplicationController
 
     def create
         @island = Island.new(island_params)
-
+        
         if @island.save
             redirect_to @island, notice: 'Island was created successfully'
         end
@@ -43,6 +43,6 @@ class IslandsController < ApplicationController
 
     private
         def island_params
-            params.require(:island).permit(:name, :path)
+            params.require(:island).permit(:name, :description, :destination_id)
         end
 end
