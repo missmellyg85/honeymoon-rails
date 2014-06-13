@@ -8,7 +8,7 @@ class IslandsController < ApplicationController
 
     def create
         @island = Island.new(island_params)
-        
+
         if @island.save
             redirect_to @island, notice: 'Island was created successfully'
         end
@@ -29,7 +29,7 @@ class IslandsController < ApplicationController
         island = Island.find(params[:id])
 
         if island.destroy
-            redirect_to island_url, notice: 'Island was deleted succesfully'
+            redirect_to islands_url, notice: 'Island was deleted succesfully'
         end
     end
 
