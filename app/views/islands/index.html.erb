@@ -19,7 +19,7 @@
   			<td><%= link_to island.id, island_path(island) %></td>
   			<td><%= island.name %></td>
   			<td><%= island.description %></td>
-  			<td><%= link_to island.destination_id, controller: 'destinations', action: 'show', id: island.destination_id %></td>
+  			<td><%= link_to island.destination.name, controller: 'destinations', action: 'show', id: island.destination_id %></td>
   			<td><%= island.created_at %></td>
   			<td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
