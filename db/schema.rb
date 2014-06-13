@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606210731) do
+ActiveRecord::Schema.define(version: 20140613201741) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140606210731) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "customer_reviews", force: true do |t|
-    t.string   "comment",    limit: 1000
+    t.string   "comment",    limit: 2000
     t.string   "name"
     t.string   "email"
     t.string   "status"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140606210731) do
 
   create_table "hotels", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.string   "description", limit: 2000
     t.string   "island_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,14 +65,14 @@ ActiveRecord::Schema.define(version: 20140606210731) do
 
   create_table "islands", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.string   "description",    limit: 2000
     t.integer  "destination_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "promos", force: true do |t|
-    t.string   "description"
+    t.string   "description", limit: 2000
     t.string   "path"
     t.datetime "state_date"
     t.datetime "end_date"
