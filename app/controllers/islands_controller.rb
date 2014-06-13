@@ -3,6 +3,7 @@ class IslandsController < ApplicationController
 
     def new
         @island = Island.new
+        @destinations = Destination.all()
     end
 
     def create
