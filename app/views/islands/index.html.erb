@@ -16,7 +16,7 @@
   <tbody>
   	<% @islands.each do |island| %>
   		<tr>
-  			<td><%= island.id %></td>
+  			<td><%= link_to island.id, island_path(island) %></td>
   			<td><%= island.name %></td>
   			<td><%= island.description %></td>
   			<td><%= link_to island.destination_id, controller: 'destinations', action: 'show', id: island.destination_id %></td>
