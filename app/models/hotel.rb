@@ -1,4 +1,4 @@
 class Hotel < ActiveRecord::Base
 	belongs_to :island
-	has_many :hotel_pictures
+	has_many :hotel_pictures, dependent: :destroy
 end
