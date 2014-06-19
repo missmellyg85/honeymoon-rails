@@ -7,13 +7,11 @@ class DestinationsController < ApplicationController
     end
 
     def create
-        @destination = Destination.new(params[:destination])
-        # @destination = Destination.new(destination_params)
-        # @islands = Island.new(island_params)
+        @destination = Destination.new(destination_params)
 
-        # if @destination.save
-        #     redirect_to @destination, notice: 'Destination was created successfully'
-        # end
+        if @destination.save
+            redirect_to @destination, notice: 'Destination was created successfully'
+        end
     end
 
     def update
@@ -46,7 +44,7 @@ class DestinationsController < ApplicationController
 
     private
         def destination_params
-            params.require(:destination).permit(:name, :path, :islands_attributes => [:id, :name, :description, :_destroy])
+            params.require(:destination).permit(:name, :path, :islands_attributes => [:id, :name, :description])
         end
         def island_params
             params.require(:islands).permit(:name, :description)
