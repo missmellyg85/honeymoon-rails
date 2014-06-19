@@ -48,4 +48,7 @@ class IslandsController < ApplicationController
         def island_params
             params.require(:island).permit(:name, :description, :destination_id, :hotels_attributes => [:id, :name, :description, :_destroy])
         end
+        def hotel_params
+            params.require(:hotels).permit(:name, :description)
+        end
 end
