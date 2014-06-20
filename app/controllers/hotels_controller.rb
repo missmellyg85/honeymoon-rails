@@ -3,7 +3,6 @@ class HotelsController < ApplicationController
 
     def new
         @hotel = Hotel.new
-        @destinations = Destination.all
         @islands = Island.all
     end
 

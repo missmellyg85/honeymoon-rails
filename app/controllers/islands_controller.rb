@@ -26,6 +26,8 @@ class IslandsController < ApplicationController
 
     def edit
         @island = Island.find(params[:id])
+        
+        @destinations = Destination.all()
     end
 
     def destroy

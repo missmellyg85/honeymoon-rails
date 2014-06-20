@@ -14,7 +14,7 @@
   <div class="control-group">
     <%= f.label :destination_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name')) %>
+      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name', @island.destination_id)) %>
     </div>
   </div>
 
