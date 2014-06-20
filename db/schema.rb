@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619230525) do
+ActiveRecord::Schema.define(version: 20140620213114) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140619230525) do
   create_table "referral_links", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
