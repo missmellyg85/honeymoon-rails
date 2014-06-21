@@ -1,4 +1,4 @@
-<%= form_for @island, :html => { :class => 'form-horizontal' } do |f| %>
+<%= nested_form_for @island, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -14,19 +14,17 @@
   <div class="control-group">
     <%= f.label :destination_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name')) %>
+      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name', @island.destination_id)) %>
     </div>
   </div>
 
-    <div class="control-group">
-      <% f.fields_for :hotels do |builder| %>
-        <p><%= builder.label :content, 'Hotel' %></p>
-      <% end %>
-    </div>
+  <p>Hotels:</p>
+  <%= f.fields_for :hotels %>
+  <p><%= f.link_to_add "Add a hotel", :hotels %></p>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                destinations_path, :class => 'btn' %>
+                islands_path, :class => 'btn' %>
   </div>
 <% end %>

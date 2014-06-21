@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613201741) do
+ActiveRecord::Schema.define(version: 20140620220629) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140613201741) do
   create_table "hotels", force: true do |t|
     t.string   "name"
     t.string   "description", limit: 2000
-    t.string   "island_id"
+    t.integer  "island_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20140613201741) do
   create_table "promos", force: true do |t|
     t.string   "description", limit: 2000
     t.string   "path"
-    t.datetime "state_date"
+    t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140613201741) do
   create_table "referral_links", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

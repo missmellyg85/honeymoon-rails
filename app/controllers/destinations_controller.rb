@@ -3,6 +3,9 @@ class DestinationsController < ApplicationController
 
     def new
         @destination = Destination.new
+        2.times do
+            @destination.islands.build
+        end
     end
 
     def create
@@ -43,6 +46,9 @@ class DestinationsController < ApplicationController
 
     private
         def destination_params
-            params.require(:destination).permit(:name, :path)
+            params.require(:destination).permit(:name, :path, :islands_attributes => [:id, :name, :description, :_destroy])
+        end
+        def island_params
+            params.require(:islands).permit(:name, :description)
         end
 end

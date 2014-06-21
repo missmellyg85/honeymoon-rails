@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :islands
   resources :hotels
   resources :hotel_pictures
+  resources :referral_links
   
   root 'home#index'
   

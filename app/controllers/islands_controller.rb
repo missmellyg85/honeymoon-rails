@@ -4,11 +4,14 @@ class IslandsController < ApplicationController
     def new
         @island = Island.new
         @destinations = Destination.all()
+        2.times do
+            @island.hotels.build
+        end
     end
 
     def create
         @island = Island.new(island_params)
-
+        @params = params
         if @island.save
             redirect_to @island, notice: 'Island was created successfully'
         end
@@ -23,6 +26,8 @@ class IslandsController < ApplicationController
 
     def edit
         @island = Island.find(params[:id])
+        
+        @destinations = Destination.all()
     end
 
     def destroy
@@ -43,6 +48,9 @@ class IslandsController < ApplicationController
 
     private
         def island_params
-            params.require(:island).permit(:name, :description, :destination_id)
+            params.require(:island).permit(:name, :description, :destination_id, :hotels_attributes => [:id, :name, :description, :_destroy])
+        end
+        def hotel_params
+            params.require(:hotels).permit(:name, :description)
         end
 end
