@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :hotels
   resources :hotel_pictures
   resources :referral_links
+  resources :promos
   
   root 'home#index'
   
