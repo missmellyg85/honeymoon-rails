@@ -8,6 +8,13 @@
   <dd><%= @destination.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:path) %>:</strong></dt>
   <dd><%= @destination.path %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:islands) %>:</strong></dt>
+  <dd>
+    <%= if @destination.islands.count == 0; 'None' end %>
+    <% @destination.islands.each do |island| %>
+        <%= link_to island.name, island_path(island) %>
+    <% end %>
+  </dd>
 </dl>
 
 <div class="form-actions">
