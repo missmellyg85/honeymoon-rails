@@ -34,7 +34,7 @@ class IslandsController < ApplicationController
     end
 
     def index
-        @islands = Island.all()
+        @islands = Island.all
     end
 
     def show

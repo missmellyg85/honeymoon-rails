@@ -18,6 +18,12 @@
     </div>
   </div>
 
+    <div class="control-group">
+      <% f.fields_for :hotels do |builder| %>
+        <p><%= builder.label :content, 'Hotel' %></p>
+      <% end %>
+    </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
