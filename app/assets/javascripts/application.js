@@ -16,3 +16,9 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery_nested_form
+//= require bootstrap-maxlength.min.js
+
+$(function () {
+//    $('input[type=text]').maxlength();
+    $('.text-field').maxlength();
+});
