@@ -19,6 +19,9 @@
 //= require bootstrap-maxlength.min.js
 
 $(function () {
-//    $('input[type=text]').maxlength();
-    $('.text-field').maxlength();
+    $('input[type="text"]').each(function(i, elem) {
+        $(elem).maxlength({
+            alwaysShow: true
+        });
+    });
 });
