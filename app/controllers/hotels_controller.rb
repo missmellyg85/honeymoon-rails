@@ -4,6 +4,7 @@ class HotelsController < ApplicationController
     def new
         @hotel = Hotel.new
         @islands = Island.all
+        @destinations = Destination.all
     end
 
     def create
@@ -25,6 +26,7 @@ class HotelsController < ApplicationController
     def edit
         @hotel = Hotel.find(params[:id])
         @islands = Island.all
+        @destinations = Destination.all
     end
 
     def destroy
