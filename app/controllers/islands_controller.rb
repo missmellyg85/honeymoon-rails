@@ -1,5 +1,5 @@
 class IslandsController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
 
     def new
         @island = Island.new

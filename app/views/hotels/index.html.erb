@@ -20,8 +20,8 @@
         <td><%= link_to hotel.id, hotel_path(hotel) %></td>
         <td><%= hotel.name %></td>
         <td><%= hotel.description %></td>
-        <td><%= (hotel.island) ? hotel.island.name : '' %></td>
-        <td><%= (hotel.destination) ? hotel.destination.name : '' %></td>
+        <td><%= (hotel.island) ? (link_to hotel.island.name, island_path(hotel.island)) : '' %></td>
+        <td><%= (hotel.destination) ? (link_to hotel.destination.name, destination_path(hotel.destination)) : '' %></td>
         <td><%=l hotel.created_at.to_date %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
