@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<%= root_path%>">HoneymoonRails</a>
+      <a class="brand" href="<%= root_path%>">Honeymoon Hideaways</a>
 
       <div class="container-fluid nav-collapse">
         <ul class="nav">
@@ -70,27 +70,39 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Destinations", destinations_path %></li>
-          <li><%= link_to "Islands", islands_path %></li>
-          <li><%= link_to "Hotels", hotels_path %></li>
-          <li><%= link_to "Referral Links", referral_links_path %></li>
-          <li><%= link_to "Promos", promos_path %></li>
-        </ul>
-      </div>
-      <!--/.well -->
-    </div>
-    <!--/span-->
-    <div class="span9">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-    </div>
+<div id="main-image" class="container-fluid">
+  <div class="tagline">
+    Paradise is calling
   </div>
+  <div class="subtagline">
+    How will you respond?
+  </div>
+  <div class="taglink"><a href="#">Explore destinations today</a></div>
+</div>
+
+<% if false %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><%= link_to "Destinations", destinations_path %></li>
+              <li><%= link_to "Islands", islands_path %></li>
+              <li><%= link_to "Hotels", hotels_path %></li>
+              <li><%= link_to "Referral Links", referral_links_path %></li>
+              <li><%= link_to "Promos", promos_path %></li>
+            </ul>
+          </div>
+          <!--/.well -->
+        </div>
+        <!--/span-->
+        <div class="span9">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      </div>
+<% end %>
   <!--/row-->
 
   <footer>
