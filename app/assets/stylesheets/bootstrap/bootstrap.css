@@ -1,6 +1,4 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-@import url(http://fonts.googleapis.com/css?family=Satisfy);
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -251,8 +249,8 @@ th {
     border: 1px solid #ddd !important; } }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(font-path("bootstrap/glyphicons-halflings-regular.eot"));
-  src: url(font-path("bootstrap/glyphicons-halflings-regular.eot?#iefix")) format("embedded-opentype"), url(font-path("bootstrap/glyphicons-halflings-regular.woff")) format("woff"), url(font-path("bootstrap/glyphicons-halflings-regular.ttf")) format("truetype"), url(font-path("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular")) format("svg"); }
+  src: url("bootstrap/glyphicons-halflings-regular.eot");
+  src: url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -5294,29 +5292,3 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-#main-image {
-  background-image: url("hut2.jpg");
-  height: 360px;
-  background-size: 2200px;
-  background-position-y: 1020px;
-  border: 1px solid #d4d4d4;
-  -webkit-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065);
-  -moz-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065);
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065); }
-  #main-image .tagline {
-    font-size: 5em;
-    margin-top: 147px;
-    margin-left: 45px;
-    font-family: 'Satisfy', cursive; }
-  #main-image .subtagline {
-    font-size: 2em;
-    margin-top: 20px;
-    margin-left: 522px;
-    font-family: 'Droid Serif', serif; }
-  #main-image .taglink {
-    font-size: 1.8em;
-    margin-top: 65px;
-    margin-left: 250px; }
-
-body {
-  background: url(http://subtlepatterns.com/patterns/billie_holiday.png); }
