@@ -1,10 +1,11 @@
 class DestinationsController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
 
     def new
         @destination = Destination.new
-        2.times do
+        1.times do
             @destination.islands.build
+            @destination.hotels.build
         end
     end
 
@@ -46,9 +47,14 @@ class DestinationsController < ApplicationController
 
     private
         def destination_params
-            params.require(:destination).permit(:name, :path, :islands_attributes => [:id, :name, :description, :_destroy])
+            params.require(:destination).permit(
+                :name,
+                :path,
+                :islands_attributes => [:id, :name, :description, :_destroy],
+                :hotels_attributes => [:id, :name, :description, :_destroy]
+            )
         end
-        def island_params
-            params.require(:islands).permit(:name, :description)
-        end
+        #def island_params
+        #    params.require(:islands).permit(:name, :description)
+        #end
 end

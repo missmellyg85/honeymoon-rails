@@ -1,9 +1,10 @@
 class HotelsController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
 
     def new
         @hotel = Hotel.new
         @islands = Island.all
+        @destinations = Destination.all
     end
 
     def create
@@ -25,6 +26,7 @@ class HotelsController < ApplicationController
     def edit
         @hotel = Hotel.find(params[:id])
         @islands = Island.all
+        @destinations = Destination.all
     end
 
     def destroy
