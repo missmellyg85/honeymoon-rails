@@ -38,7 +38,7 @@
 </head>
 <body>
 
-<%= if Rails.env != 'Production'
+<%= if Rails.env != 'Production' || admin_signed_in?
         render 'layouts/admin_navbar'
     end
 %>
