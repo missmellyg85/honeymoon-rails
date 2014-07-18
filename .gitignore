@@ -15,3 +15,5 @@
 /log/*.log
 /tmp
 .idea/
+app/assets/images/store/
+*.DS_Store
