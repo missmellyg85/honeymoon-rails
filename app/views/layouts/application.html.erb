@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- photo credits:
+  -->
   <title><%= content_for?(:title) ? yield(:title) : "HoneymoonRails" %></title>
   <%= csrf_meta_tags %>
 
@@ -38,79 +41,84 @@
 </head>
 <body>
 
-<div class="navbar navbar-fluid-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="<%= root_path%>">Honeymoon Hideaways</a>
+<!--<div class="navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+      <!--<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</a>-->
+      <!--<a class="navbar-brand" href="<%= root_path%>">Honeymoon Hideaways</a>-->
 
-      <div class="container-fluid nav-collapse">
-        <ul class="nav">
-          <li><%= link_to "Link1", "/path1" %></li>
-          <li><%= link_to "Link2", "/path2" %></li>
-          <li><%= link_to "Link3", "/path3" %></li>
-          <% if !admin_signed_in? %>
-              <li><%= link_to "Login", new_admin_session_path %></li>
-          <% else %>
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, <%= current_admin.email %><span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Edit Profile", edit_admin_registration_path %></li>
-                  <li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></li>
-                </ul>
-              </li>
-          <% end %>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+      <!--<div class="container-fluid nav-collapse">-->
+        <!--<ul class="nav navbar-nav">-->
+          <!--<li><%= link_to "Link1", "/path1" %></li>-->
+          <!--<li><%= link_to "Link2", "/path2" %></li>-->
+          <!--<li><%= link_to "Link3", "/path3" %></li>-->
+          <!--<% if !admin_signed_in? %>-->
+              <!--<li><%= link_to "Login", new_admin_session_path %></li>-->
+          <!--<% else %>-->
+              <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, <%= current_admin.email %><span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu">-->
+                  <!--<li><%= link_to "Edit Profile", edit_admin_registration_path %></li>-->
+                  <!--<li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></li>-->
+                <!--</ul>-->
+              <!--</li>-->
+          <!--<% end %>-->
+        <!--</ul>-->
+      <!--</div>-->
+      <!--<!--/.nav-collapse -->
+    <!--</div>-->
+<!--</div>-->
+
+<nav class="navbar navbar-default" role="navigation">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path%>">Honeymoon Hideaways</a>
     </div>
-  </div>
-</div>
 
-<div id="main-image" class="container-fluid">
-  <div class="tagline">
-    Paradise is calling
-  </div>
-  <div class="subtagline">
-    How will you respond?
-  </div>
-  <div class="taglink"><a href="#">Explore destinations today</a></div>
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <% if !admin_signed_in? %>
+            <li><%= link_to "Login", new_admin_session_path %></li>
+        <% else %>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, <%= current_admin.email %><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Edit Profile", edit_admin_registration_path %></li>
+                <li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-<% if false %>
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Destinations", destinations_path %></li>
-              <li><%= link_to "Islands", islands_path %></li>
-              <li><%= link_to "Hotels", hotels_path %></li>
-              <li><%= link_to "Referral Links", referral_links_path %></li>
-              <li><%= link_to "Promos", promos_path %></li>
-            </ul>
-          </div>
-          <!--/.well -->
-        </div>
-        <!--/span-->
-<% end %>
-        <div class="span9">
-          <%= render 'layouts/messages' %>
-          <%= yield %>
-        </div>
-      </div>
-  <!--/row-->
-
-  <footer>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+  <footer class="row">
     <p>&copy; Company 2014</p>
   </footer>
 
-</div>
-<!-- /container -->
 
 </body>
 </html>
