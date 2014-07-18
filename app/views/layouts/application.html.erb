@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- photo credits:
+  -->
   <title><%= content_for?(:title) ? yield(:title) : "HoneymoonRails" %></title>
   <%= csrf_meta_tags %>
 
@@ -38,40 +41,21 @@
 </head>
 <body>
 
-<%= if Rails.env != 'Production' || admin_signed_in?
-        render 'layouts/admin_navbar'
-    end
-%>
-
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Destinations", destinations_path %></li>
-          <li><%= link_to "Islands", islands_path %></li>
-          <li><%= link_to "Hotels", hotels_path %></li>
-          <li><%= link_to "Referral Links", referral_links_path %></li>
-          <li><%= link_to "Promos", promos_path %></li>
-        </ul>
-      </div>
-      <!--/.well -->
-    </div>
-    <!--/span-->
-    <div class="span9">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-    </div>
-  </div>
-  <!--/row-->
+  <%= render 'layouts/navbar' %>
 
-  <footer>
+    <%= if Rails.env != 'Production' || admin_signed_in?
+            render 'layouts/admin_navbar'
+        end
+    %>
+
+
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+  <footer class="row">
     <p>&copy; Company 2014</p>
   </footer>
-
 </div>
-<!-- /container -->
 
 </body>
 </html>

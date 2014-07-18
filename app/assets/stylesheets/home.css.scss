@@ -1,3 +1,97 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url(http://fonts.googleapis.com/css?family=Satisfy);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+$curvy: 'Satisfy', cursive;
+$serify: 'Droid Serif', serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+$main-height:340px;
+#main-image::after{
+  content:"";
+//  margin-top:50px;
+  background-image: url('hut.jpg');
+  background-size: 2030px;
+  background-position:0px 940px;
+  height:$main-height;
+  width:100%;
+  opacity: 0.7;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  position: absolute;
+  z-index: -1;
+}
+
+#main-image {
+  height:$main-height;
+  display: block;
+  position: relative;
+  -webkit-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.065);
+  .tags{
+    margin-top:78px;
+    height:100px;
+  }
+  .tagline {
+      font-size:6em;
+      margin-left:66px;
+      font-family: $curvy;
+  }
+}
+
+.taglink {
+  margin-top: 5px;
+  a{
+      font-size:1.8em;
+      font-family: $serify;
+      color:#498C9F;
+    }
+}
+
+.push-down {
+  margin-top:50px;
+}
+#windows {
+  background-color:whitesmoke;
+  .pane{
+    h2 {
+      text-align:center;
+      font-weight:200;
+    }
+    img{
+      width: 100%;
+      @include border-radius(2px);
+      opacity:0.9;
+    }
+    p {
+      margin-top:5px;
+      text-align: center;
+      font-family:$serify;
+    }
+  }
+  $top: 10px;
+  $bottom: $top;
+  $full_side: 160px;
+  .pane.left {
+    padding: $top 0 $bottom $full_side;
+  }
+  .pane.center{
+    padding: $top $full_side/2;
+  }
+  .pane.right{
+    padding: $top $full_side $bottom 0;
+  }
+}
