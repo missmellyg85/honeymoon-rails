@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all]
 
     def new
         @destination = Destination.new
@@ -38,7 +38,11 @@ class DestinationsController < ApplicationController
     end
 
     def index
-        @destinations = Destination.all()
+        @destinations = Destination.all
+    end
+
+    def all
+        @destinations = Destination.all
     end
 
     def show
@@ -54,7 +58,4 @@ class DestinationsController < ApplicationController
                 :hotels_attributes => [:id, :name, :description, :_destroy]
             )
         end
-        #def island_params
-        #    params.require(:islands).permit(:name, :description)
-        #end
 end
