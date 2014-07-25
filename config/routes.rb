@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+
     get 'destinations/all' => 'destinations#all', as: :destinations_all
     get 'islands/all' => 'islands#all', as: :islands_all
     get 'hotels/all' => 'hotels#all', as: :hotels_all
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
     resources :hotels
     resources :referral_links
     resources :promos
+    resources :contact
 
     root 'home#index'
 
