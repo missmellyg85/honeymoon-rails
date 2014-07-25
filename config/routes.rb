@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
     get 'destinations/all' => 'destinations#all', as: :destinations_all
     get 'islands/all' => 'islands#all', as: :islands_all
+    get 'hotels/all' => 'hotels#all', as: :hotels_all
     resources :destinations
     resources :islands
     resources :hotels

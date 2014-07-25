@@ -36047,3 +36047,420 @@ Processing by IslandsController#all as HTML
   Rendered layouts/_navbar.html.erb (2.2ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 99ms (Views: 96.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/hotels" for 127.0.0.1 at 2014-07-25 13:41:03 -0500
+Processing by HotelsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1
+  [1m[36mHotel Load (0.3ms)[0m  [1mSELECT `hotels`.* FROM `hotels`[0m
+  Rendered hotels/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 78ms (Views: 56.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/bootstrap-maxlength.min.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/destinations.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/hotel_pictures.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/hotels.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/islands.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/promos.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/referral_links.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-25 13:41:04 -0500
+
+
+Started GET "/hotels" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+Processing by HotelsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1
+  [1m[36mHotel Load (0.3ms)[0m  [1mSELECT `hotels`.* FROM `hotels`[0m
+  [1m[35mHotelPicture Load (1.4ms)[0m  SELECT `hotel_pictures`.* FROM `hotel_pictures`  WHERE `hotel_pictures`.`hotel_id` = ?  [["hotel_id", 11]]
+  [1m[36mHotelPicture Load (0.2ms)[0m  [1mSELECT `hotel_pictures`.* FROM `hotel_pictures`  WHERE `hotel_pictures`.`hotel_id` = ?[0m  [["hotel_id", 13]]
+  Rendered hotels/index.html.erb within layouts/application (42.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 122ms (Views: 90.2ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/bootstrap-maxlength.min.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/destinations.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/hotel_pictures.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/hotels.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/islands.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/promos.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/referral_links.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-25 13:43:44 -0500
+
+
+Started GET "/hotels" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+Processing by HotelsController#index as HTML
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1
+  [1m[36mHotel Load (0.4ms)[0m  [1mSELECT `hotels`.* FROM `hotels`[0m
+  [1m[35mHotelPicture Load (0.2ms)[0m  SELECT `hotel_pictures`.* FROM `hotel_pictures`  WHERE `hotel_pictures`.`hotel_id` = ?  [["hotel_id", 11]]
+  [1m[36mHotelPicture Load (0.2ms)[0m  [1mSELECT `hotel_pictures`.* FROM `hotel_pictures`  WHERE `hotel_pictures`.`hotel_id` = ?[0m  [["hotel_id", 13]]
+  Rendered hotels/index.html.erb within layouts/application (56.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 123ms (Views: 100.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/bootstrap-maxlength.min.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/destinations.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/hotels.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/hotel_pictures.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/islands.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/promos.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/referral_links.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:28 -0500
+
+
+Started GET "/hotels/all" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+Processing by HotelsController#all as HTML
+  [1m[35mHotel Load (0.5ms)[0m  SELECT `hotels`.* FROM `hotels`
+  [1m[36mIsland Load (0.2ms)[0m  [1mSELECT  `islands`.* FROM `islands`  WHERE `islands`.`id` = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mDestination Load (0.2ms)[0m  SELECT  `destinations`.* FROM `destinations`  WHERE `destinations`.`id` = ? LIMIT 1  [["id", 6]]
+  Rendered hotels/all.html.erb within layouts/application (75.7ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 125ms (Views: 119.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/bootstrap-maxlength.min.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/destinations.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/hotel_pictures.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/promos.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/islands.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/hotels.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/referral_links.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-25 13:46:32 -0500
+
+
+Started GET "/hotels/11" for 127.0.0.1 at 2014-07-25 13:46:34 -0500
+Processing by HotelsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mHotel Load (0.4ms)[0m  SELECT  `hotels`.* FROM `hotels`  WHERE `hotels`.`id` = ? LIMIT 1  [["id", 11]]
+  Rendered hotels/show.html.erb within layouts/application (4.4ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/hotels/all" for 127.0.0.1 at 2014-07-25 13:46:35 -0500
+Processing by HotelsController#all as HTML
+  [1m[35mHotel Load (0.4ms)[0m  SELECT `hotels`.* FROM `hotels`
+  [1m[36mIsland Load (0.5ms)[0m  [1mSELECT  `islands`.* FROM `islands`  WHERE `islands`.`id` = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mDestination Load (0.5ms)[0m  SELECT  `destinations`.* FROM `destinations`  WHERE `destinations`.`id` = ? LIMIT 1  [["id", 6]]
+  Rendered hotels/all.html.erb within layouts/application (14.4ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins`  WHERE `admins`.`id` = 1  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 99ms (Views: 95.5ms | ActiveRecord: 1.8ms)
