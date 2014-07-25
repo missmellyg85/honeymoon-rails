@@ -15,10 +15,18 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
     <ul class="nav navbar-nav">
       <li><%= link_to("Destinations", destinations_all_path) %></li>
-      <li><%= link_to("Islands", islands_all_path) %>></li>
+      <li><%= link_to("Islands", islands_all_path) %></li>
       <li><%= link_to("Hotels", hotels_all_path) %></li>
       <li><%= link_to("Promos", promos_all_path)%></li>
     </ul>
 
+    <ul class="nav navbar-nav pull-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, <%= current_admin.email %><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Edit Profile", edit_admin_registration_path %></li>
+          <li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></li>
+        </ul>
+      </li>
+    </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
