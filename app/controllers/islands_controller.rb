@@ -3,7 +3,7 @@ class IslandsController < ApplicationController
 
     def new
         @island = Island.new
-        @destinations = Destination.all()
+        @destinations = Destination.all
         2.times do
             @island.hotels.build
         end
@@ -27,7 +27,7 @@ class IslandsController < ApplicationController
     def edit
         @island = Island.find(params[:id])
         
-        @destinations = Destination.all()
+        @destinations = Destination.all
     end
 
     def destroy
@@ -39,6 +39,10 @@ class IslandsController < ApplicationController
     end
 
     def index
+        @islands = Island.all
+    end
+
+    def all
         @islands = Island.all
     end
 

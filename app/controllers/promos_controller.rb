@@ -39,6 +39,10 @@ class PromosController < ApplicationController
         @promos = Promo.all
     end
 
+    def all
+        @promos = Promo.all
+    end
+
     def show
         @promo = Promo.find(params[:id])
     end
