@@ -45,9 +45,9 @@
   <%= render 'layouts/navbar' %>
 
     <%=
-        # if Rails.env != 'Production' || admin_signed_in?
-        #     render 'layouts/admin_navbar'
-        # end
+        if Rails.env != 'Production' || admin_signed_in?
+            render 'layouts/admin_navbar'
+        end
     %>
 
 
