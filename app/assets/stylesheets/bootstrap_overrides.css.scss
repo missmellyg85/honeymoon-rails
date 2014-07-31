@@ -17,3 +17,16 @@
 .lead {
   margin-bottom:0;
 }
+
+.navbar-admin {
+  background-color:whitesmoke;
+  li > a, a, span.navbar-brand{
+    padding-top:7px;
+    padding-bottom:7px;
+  }
+  min-height:inherit;
+  .navbar-brand {
+    height:inherit;
+    color:inherit;
+  }
+}

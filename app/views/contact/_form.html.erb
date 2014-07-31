@@ -1,0 +1,36 @@
+<form role="form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Phone">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+      <div class="form-group">
+        <label for="occasion">Occasion for travel</label>
+        <input type="text" class="form-control" id="occasion" placeholder="Occasion">
+      </div>
+  <div class="form-group">
+    <label for="locations">Locations of interest</label>
+    <% @destinations.each do |d| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="<%= d.name %>">
+            <%= d.name %>
+          </label>
+        </div>
+    <% end %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="other">
+        Other
+      </label>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

@@ -84,14 +84,21 @@ $main-height:340px;
   }
   $top: 10px;
   $bottom: $top;
-  $full_side: 160px;
-  .pane.left {
-    padding: $top 0 $bottom $full_side;
+  $full_side: 120px;
+  @media (min-width: 992px) {
+    .col-md-4:first-of-type {
+      padding: $top 0 $bottom $full_side;
+    }
+    .col-md-4:nth-of-type(2) {
+      padding: $top $full_side/2;
+    }
+    .col-md-4:last-of-type {
+      padding: $top $full_side $bottom 0;
+    }
   }
-  .pane.center{
-    padding: $top $full_side/2;
-  }
-  .pane.right{
-    padding: $top $full_side $bottom 0;
+  @media (min-width: 768px) {
+    .col-sm-4 {
+      padding: $top 10px;
+    }
   }
 }
