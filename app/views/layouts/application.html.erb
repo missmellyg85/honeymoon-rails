@@ -41,7 +41,6 @@
 </head>
 <body>
 
-<div class="container-fluid">
   <%= render 'layouts/navbar' %>
 
     <%=
@@ -53,10 +52,11 @@
 
   <%= render 'layouts/messages' %>
   <%= yield %>
-  <footer class="row">
-    <p>&copy; Company 2014</p>
-  </footer>
-</div>
+    <div class="container">
+      <footer class="row">
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div>
 
 </body>
 </html>

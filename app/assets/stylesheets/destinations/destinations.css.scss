@@ -1,0 +1,46 @@
+img {
+    height: 200px;
+    width: 300px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.destination_jumbo h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 6em;
+}
+
+.destination_jumbo {
+    min-height:340px;
+    background: url("destinations_jumbo.jpg") no-repeat;
+    background-size: cover;
+
+}
+
+.destination_tile {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 0 30px 30px;
+    float: left;
+}
+
+.destination_image {
+    width: 100%;
+}
+
+.destination_caption {
+    position: relative;
+    bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    text-align: left;
+}
+
+.destination_tile_row {
+    margin:auto;
+    margin-top: 30px;
+    max-width: 90%;
+}

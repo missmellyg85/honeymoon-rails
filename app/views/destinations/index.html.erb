@@ -1,16 +1,28 @@
-<div class="row">
-    <% @destinations.each do |destination| %>
-        <div class="col-sm-4">
-            <h3><%= destination.name %></h3>
+<div class="jumbotron destination_jumbo">
+  <div class="container">
+    <h1 class="tagline">Destinations</h1>
+  </div>
+</div>
 
-            <% destination.islands.each do |island| %>
-                <%= link_to island.name, island_path(island) %>
-            <% end %>
+<div class="container">
+    <div class="destination_tile_row">
+      <% @destinations.each do |destination| %>
 
-            <% destination.hotels.each do |hotel| %>
-              <%= link_to hotel.name, hotel_path(hotel) %>
-            <% end %>
+          <div class="destination_tile">
 
-        </div>
-    <% end %>
+            <div class="destination_image">
+              <!--TODO: use the actual path for destination image here.  It just ain't created yet.-->
+              <%= image_tag("destinations.jpg") %>
+            </div>
+
+            <p class="well destination_caption">
+              <%= destination.name %>
+              <button class="btn btn-success btn-xs pull-right">Read More</button>
+            </p>
+
+          </div>
+
+
+      <% end %>
+    </div>
 </div>
