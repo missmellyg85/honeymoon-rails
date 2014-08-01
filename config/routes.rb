@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'islands/:id/admin' => 'islands#show_admin', as: :island_admin
 
     get 'hotels/all' => 'hotels#all', as: :hotels_all
+    get 'hotels/:id/admin' => 'hotels#show_admin', as: :hotel_admin
+
     get 'promos/all' => 'promos#all', as: :promos_all
     resources :destinations
     resources :islands

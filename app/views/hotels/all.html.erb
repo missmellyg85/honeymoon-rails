@@ -17,7 +17,7 @@
   <tbody>
   <% @hotels.each do |hotel| %>
       <tr>
-        <td><%= link_to hotel.id, hotel_path(hotel) %></td>
+        <td><%= link_to hotel.id, hotel_admin_path(hotel) %></td>
         <td><%= hotel.name %></td>
         <td><%= hotel.description %></td>
         <td><%= (hotel.island) ? (link_to hotel.island.name, island_path(hotel.island)) : '' %></td>
