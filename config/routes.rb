@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'contact/index'
 
     get 'destinations/all' => 'destinations#all', as: :destinations_all
+    get 'destinations/:id/admin' => 'destinations#show_admin', as: :destination_admin
     get 'islands/all' => 'islands#all', as: :islands_all
     get 'hotels/all' => 'hotels#all', as: :hotels_all
     get 'promos/all' => 'promos#all', as: :promos_all

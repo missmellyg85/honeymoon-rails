@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all]
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all, :show_admin]
 
     def new
         @destination = Destination.new
@@ -43,6 +43,10 @@ class DestinationsController < ApplicationController
 
     def all
         @destinations = Destination.all
+    end
+
+    def show_admin
+        @destination = Destination.find(params[:id])
     end
 
     def show

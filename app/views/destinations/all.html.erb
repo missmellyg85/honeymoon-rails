@@ -15,7 +15,7 @@
   <tbody>
     <% @destinations.each do |destination| %>
       <tr>
-        <td><%= link_to destination.id, destination_path(destination) %></td>
+        <td><%= link_to destination.id, destination_admin_path(destination) %></td>
         <td><%= destination.name %></td>
         <td><%= destination.path %></td>
         <td><%=l destination.created_at %></td>
