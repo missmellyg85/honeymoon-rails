@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get 'hotels/:id/admin' => 'hotels#show_admin', as: :hotel_admin
 
     get 'promos/all' => 'promos#all', as: :promos_all
+    get 'promos/:id/admin' => 'promos#show_admin', as: :promo_admin
+
     resources :destinations
     resources :islands
     resources :hotels

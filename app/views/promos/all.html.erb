@@ -17,7 +17,7 @@
   <tbody>
   <% @promos.each do |promo| %>
       <tr>
-        <td><%= link_to promo.id, promo_path(promo) %></td>
+        <td><%= link_to promo.id, promo_admin_path(promo) %></td>
         <td><%= promo.description %></td>
         <td><%= promo.path %></td>
         <td><%= promo.start_date %></td>

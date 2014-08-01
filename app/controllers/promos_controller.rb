@@ -1,5 +1,5 @@
 class PromosController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all, :show_admin]
 
     def new
         @promo = Promo.new
@@ -10,7 +10,7 @@ class PromosController < ApplicationController
         @promo = Promo.new(promo_params)
 
         if @promo.save
-            redirect_to @promo, notice: 'Promo was created successfully'
+            redirect_to promo_admin_path @promo, notice: 'Promo was created successfully'
         end
     end
 
@@ -18,7 +18,7 @@ class PromosController < ApplicationController
         promo = Promo.find(params[:id])
 
         if promo.update!(promo_params)
-            redirect_to promo, notice: 'Promo was updated successfully'
+            redirect_to promo_admin_path promo, notice: 'Promo was updated successfully'
         end
     end
 
@@ -31,7 +31,7 @@ class PromosController < ApplicationController
         promo = Promo.find(params[:id])
 
         if promo.destroy
-            redirect_to promos_url, notice: 'Promo was deleted successfully'
+            redirect_to promos_all_path, notice: 'Promo was deleted successfully'
         end
     end
 
@@ -44,6 +44,10 @@ class PromosController < ApplicationController
     end
 
     def show
+        @promo = Promo.find(params[:id])
+    end
+
+    def show_admin
         @promo = Promo.find(params[:id])
     end
 
