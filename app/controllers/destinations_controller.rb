@@ -47,6 +47,7 @@ class DestinationsController < ApplicationController
 
     def show
         @destination = Destination.find(params[:id])
+        @islands = @destination.islands
     end
 
     private
