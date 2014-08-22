@@ -14,7 +14,17 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><%= link_to("Destinations", destinations_path)%></li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Destinations<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <% destinations_list.each do |destination| %>
+            <li><%= link_to(destination.name, destination_path(destination))%></li>
+          <% end %>
+          <li><%= link_to("See all", destinations_path)%></li>
+        </ul>
+      </li>
+
+      
       <li><%= link_to("Promos", promos_path)%></li>
       <li><%= link_to("Contact", contact_index_path)%></li>
     </ul>
