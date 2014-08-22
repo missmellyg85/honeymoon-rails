@@ -8,16 +8,16 @@
     <div class="destination_tile_row">
       <% @islands.each do |island| %>
 
-          <div class="destination_tile">
+          <%= tag "div", :class=>"island_tile", :id=>"island_#{island.id}" %>
 
-            <div class="destination_image">
+            <div class="island_image">
 
-              <%= image_tag("destinations.jpg") %>
+              <%= image_tag("islands.jpg") %>
             </div>
 
             <p class="well destination_caption">
               <%= island.name %>
-              <%= link_to(content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), island_path(island)) %>
+              <%= link_to content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), "#island_#{island.id}" %>
             </p>
 
           </div>
