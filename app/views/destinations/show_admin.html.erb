@@ -13,13 +13,13 @@
   <dd>
     <%= if @destination.islands.count == 0; 'None' end %>
     <% @destination.islands.each do |island| %>
-        <%= link_to island.name, island_path(island) %>
+        <%= link_to island.name, island_admin_path(island) %>
     <% end %>
   </dd>
   <dd>
     <%= if @destination.hotels.count == 0; 'None' end %>
     <% @destination.hotels.each do |hotel| %>
-        <%= link_to hotel.name, hotel_path(hotel) %>
+        <%= link_to hotel.name, hotel_admin_path(hotel) %>
     <% end %>
   </dd>
 </dl>

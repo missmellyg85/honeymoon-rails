@@ -14,7 +14,7 @@
   <dd>
     <%= if @island.hotels.count == 0; 'None' end %>
     <% @island.hotels.each do |hotel| %>
-        <%= link_to hotel.name, hotel_path(hotel) %>
+        <%= link_to hotel.name, hotel_admin_path(hotel) %>
     <% end %>
   </dd>
 
