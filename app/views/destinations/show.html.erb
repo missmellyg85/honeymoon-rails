@@ -17,7 +17,7 @@
 
             <p class="well destination_caption">
               <%= island.name %>
-              <%= link_to content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), "#island_#{island.id}" %>
+              <%= link_to content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), island_path(island) %>
             </p>
 
           </div>
