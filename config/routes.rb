@@ -22,8 +22,12 @@ Rails.application.routes.draw do
 
     root 'home#index'
 
+    if Rails.env.production?
+        devise_for :admins, :controllers => { :registrations => "registrations" }
+    else
+        devise_for :admins
+    end
 
-    devise_for :admins
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
