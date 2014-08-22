@@ -1,5 +1,5 @@
 class IslandsController < ApplicationController
-    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index, :show_admin]
 
     def new
         @island = Island.new
@@ -13,7 +13,7 @@ class IslandsController < ApplicationController
         @island = Island.new(island_params)
         @params = params
         if @island.save
-            redirect_to islands_all_url, notice: 'Island was created successfully'
+            redirect_to island_admin_path @island, notice: 'Island was created successfully'
         end
     end
 
@@ -21,7 +21,7 @@ class IslandsController < ApplicationController
         island = Island.find(params[:id])
 
         if island.update!(island_params)
-            redirect_to islands_all_url, notice: 'Island was updated successfully'
+            redirect_to island_admin_path island, notice: 'Island was updated successfully'
     end end
 
     def edit
@@ -34,7 +34,7 @@ class IslandsController < ApplicationController
         island = Island.find(params[:id])
 
         if island.destroy
-            redirect_to island_url, notice: 'Island was deleted successfully'
+            redirect_to island_admin_path, notice: 'Island was deleted successfully'
         end
     end
 
@@ -47,6 +47,10 @@ class IslandsController < ApplicationController
     end
 
     def show
+        @island = Island.find(params[:id])
+    end
+
+    def show_admin
         @island = Island.find(params[:id])
     end
 

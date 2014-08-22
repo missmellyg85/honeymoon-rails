@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all]
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all, :show_admin]
 
     def new
         @destination = Destination.new
@@ -13,7 +13,7 @@ class DestinationsController < ApplicationController
         @destination = Destination.new(destination_params)
 
         if @destination.save
-            redirect_to destinations_all_url, notice: 'Destination was created successfully'
+            redirect_to destination_admin_path @destination, notice: 'Destination was created successfully'
         end
     end
 
@@ -21,7 +21,7 @@ class DestinationsController < ApplicationController
         destination = Destination.find(params[:id])
 
         if destination.update!(destination_params)
-            redirect_to destinations_all_url, notice: 'Destination was updated successfully'
+            redirect_to destination_admin_path destination, notice: 'Destination was updated successfully'
         end
     end
 
@@ -33,7 +33,7 @@ class DestinationsController < ApplicationController
         destination = Destination.find(params[:id])
 
         if destination.destroy
-            redirect_to destinations_all_url, notice: 'Destination was deleted successfully'
+            redirect_to destinations_all_path, notice: 'Destination was deleted successfully'
         end
     end
 
@@ -43,6 +43,10 @@ class DestinationsController < ApplicationController
 
     def all
         @destinations = Destination.all
+    end
+
+    def show_admin
+        @destination = Destination.find(params[:id])
     end
 
     def show

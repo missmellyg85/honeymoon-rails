@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  get 'contact/index'
+    get 'contact/index'
 
     get 'destinations/all' => 'destinations#all', as: :destinations_all
+    get 'destinations/:id/admin' => 'destinations#show_admin', as: :destination_admin
+
     get 'islands/all' => 'islands#all', as: :islands_all
+    get 'islands/:id/admin' => 'islands#show_admin', as: :island_admin
+
     get 'hotels/all' => 'hotels#all', as: :hotels_all
+    get 'hotels/:id/admin' => 'hotels#show_admin', as: :hotel_admin
+
     get 'promos/all' => 'promos#all', as: :promos_all
+    get 'promos/:id/admin' => 'promos#show_admin', as: :promo_admin
+
     resources :destinations
     resources :islands
     resources :hotels
@@ -14,8 +22,12 @@ Rails.application.routes.draw do
 
     root 'home#index'
 
+    if Rails.env.production?
+        devise_for :admins, :controllers => { :registrations => "registrations" }
+    else
+        devise_for :admins
+    end
 
-    devise_for :admins
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 

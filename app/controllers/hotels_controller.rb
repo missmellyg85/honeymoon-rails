@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index]
+    before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :index, :show_admin]
 
     def new
         @hotel = Hotel.new
@@ -11,15 +11,15 @@ class HotelsController < ApplicationController
         @hotel = Hotel.new(hotel_params)
 
         if @hotel.save
-            redirect_to hotels_all_url, notice: 'Hotel was created successfully'
+            redirect_to hotel_admin_path @hotel, notice: 'Hotel was created successfully'
         end
     end
 
     def update
-        hotel = Hotel.find(params[:id])
+        @hotel = Hotel.find(params[:id])
 
-        if hotel.update!(hotel_params)
-            redirect_to hotels_all_url, notice: 'Hotel was updated successfully'
+        if @hotel.update!(hotel_params)
+            redirect_to hotel_admin_path @hotel, notice: 'Hotel was updated successfully'
         end
     end
 
@@ -33,7 +33,7 @@ class HotelsController < ApplicationController
         hotel = Hotel.find(params[:id])
 
         if hotel.destroy
-            redirect_to hotels_url, notice: 'Hotel was deleted successfully'
+            redirect_to hotel_admin_path, notice: 'Hotel was deleted successfully'
         end
     end
 
@@ -46,6 +46,10 @@ class HotelsController < ApplicationController
     end
 
     def show
+        @hotel = Hotel.find(params[:id])
+    end
+
+    def show_admin
         @hotel = Hotel.find(params[:id])
     end
 
