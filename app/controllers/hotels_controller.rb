@@ -11,7 +11,7 @@ class HotelsController < ApplicationController
         @hotel = Hotel.new(hotel_params)
 
         if @hotel.save
-            redirect_to @hotel, notice: 'Hotel was created successfully'
+            redirect_to hotels_all_url, notice: 'Hotel was created successfully'
         end
     end
 
@@ -19,7 +19,7 @@ class HotelsController < ApplicationController
         hotel = Hotel.find(params[:id])
 
         if hotel.update!(hotel_params)
-            redirect_to hotel, notice: 'Hotel was updated successfully'
+            redirect_to hotels_all_url, notice: 'Hotel was updated successfully'
         end
     end
 

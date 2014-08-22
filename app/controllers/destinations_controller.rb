@@ -21,7 +21,7 @@ class DestinationsController < ApplicationController
         destination = Destination.find(params[:id])
 
         if destination.update!(destination_params)
-            redirect_to destination, notice: 'Destination was updated successfully'
+            redirect_to destinations_all_url, notice: 'Destination was updated successfully'
         end
     end
 

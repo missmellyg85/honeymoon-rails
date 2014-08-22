@@ -13,7 +13,7 @@ class IslandsController < ApplicationController
         @island = Island.new(island_params)
         @params = params
         if @island.save
-            redirect_to @island, notice: 'Island was created successfully'
+            redirect_to islands_all_url, notice: 'Island was created successfully'
         end
     end
 
@@ -21,7 +21,7 @@ class IslandsController < ApplicationController
         island = Island.find(params[:id])
 
         if island.update!(island_params)
-            redirect_to island, notice: 'Island was updated successfully'
+            redirect_to islands_all_url, notice: 'Island was updated successfully'
     end end
 
     def edit
