@@ -10,14 +10,14 @@
 
 }
 
-.destination_tile {
+.tile {
     box-sizing: border-box;
     padding: 0;
     margin: 0 0 30px 30px;
     float: left;
 }
 
-.destination_image {
+.tile_image {
     width: 100%;
     img {
         height: 200px;
@@ -27,7 +27,7 @@
     }
 }
 
-.destination_caption {
+.tile_caption {
     position: relative;
     bottom: 15px;
     margin-top: 5px;
@@ -39,7 +39,7 @@
     padding-right:5px;
 }
 
-.destination_tile_row {
+.tile_row {
     margin:auto;
     margin-top: 30px;
     max-width: 90%;

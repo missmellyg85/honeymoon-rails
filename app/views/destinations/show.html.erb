@@ -5,20 +5,20 @@
 </div>
 
 <div class="container">
-    <div class="destination_tile_row">
+    <div class="tile_row">
       <% @islands.each do |island| %>
 
-          <%= tag "div", :class=>"island_tile", :id=>"island_#{island.id}" %>
+          <%= tag "div", :class=>"tile" %>
 
-            <div class="island_image">
+            <div class="tile_image">
 
               <%= image_tag("islands.jpg") %>
             </div>
 
-            <p class="well destination_caption">
-              <%= island.name %>
+            <div class="well tile_caption">
+              <span><%= island.name %></span>
               <%= link_to content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), island_path(island) %>
-            </p>
+            </div>
 
           </div>
 

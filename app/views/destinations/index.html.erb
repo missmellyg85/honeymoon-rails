@@ -5,20 +5,20 @@
 </div>
 
 <div class="container">
-    <div class="destination_tile_row">
+    <div class="tile_row">
       <% @destinations.each do |destination| %>
 
-          <div class="destination_tile">
+          <div class="tile">
 
-            <div class="destination_image">
+            <div class="tile_image">
               <!--TODO: use the actual path for destination image here.  It just ain't created yet.-->
-              <%= image_tag("destinations.jpg") %>
+              <%= image_tag("destinations/#{destination.path}.jpg") %>
             </div>
 
-            <p class="well destination_caption">
-              <%= destination.name %>
+            <div class="well tile_caption">
+              <span><%= destination.name %></span>
               <%= link_to(content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), destination_path(destination)) %>
-            </p>
+            </div>
 
           </div>
 
