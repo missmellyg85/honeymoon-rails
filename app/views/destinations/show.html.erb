@@ -1,3 +1,24 @@
-<div class="container-fluid">
+<div class="jumbotron destination_jumbo">
+  <div class="container">
+    <h1 class="tagline"><%= @destination.name %></h1>
+  </div>
+</div>
 
+<div class="container">
+    <div class="destination_tile_row">
+      <% @islands.each do |island| %>
+
+          <%= tag "div", :class=>"island_tile", :id=>"island_#{island.id}" %>
+
+            <div class="island_image">
+
+              <%= image_tag("islands.jpg") %>
+            </div>
+
+            <p class="well destination_caption">
+              <%= island.name %>
+              <%= link_to content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), island_path(island) %>
+            </p>
+      <% end %>
+    </div>
 </div>

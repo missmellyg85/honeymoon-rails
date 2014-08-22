@@ -17,7 +17,7 @@
 
             <p class="well destination_caption">
               <%= destination.name %>
-              <a href="<%= destination_path destination %>" class="btn btn-success btn-xs pull-right">Read More</a>
+              <%= link_to(content_tag("button", "Read More", :class=>"btn btn-success btn-xs pull-right"), destination_path(destination)) %>
             </p>
 
           </div>

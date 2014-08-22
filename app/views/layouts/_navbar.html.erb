@@ -19,5 +19,11 @@
       <li><%= link_to("Contact", contact_index_path)%></li>
     </ul>
 
+    <% if  !admin_signed_in? %>
+    <ul class="nav navbar-nav pull-right">
+      <li><%= link_to "Login", new_admin_session_path %></li>
+    </ul>
+    <% end %>
+
   </div><!-- /.navbar-collapse -->
 </nav>
