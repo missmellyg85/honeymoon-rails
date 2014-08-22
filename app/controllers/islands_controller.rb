@@ -48,6 +48,7 @@ class IslandsController < ApplicationController
 
     def show
         @island = Island.find(params[:id])
+        @hotels = @island.hotels
     end
 
     def show_admin

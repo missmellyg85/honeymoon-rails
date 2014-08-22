@@ -12,7 +12,11 @@
 
             <div class="tile_image">
               <!--TODO: use the actual path for destination image here.  It just ain't created yet.-->
-              <%= image_tag("destinations/#{destination.path}.jpg") %>
+              <% if destination.path.blank? %>
+                <%= image_tag("/stock.jpg") %>
+              <% else %>
+                <%= image_tag("destinations/#{destination.path}.jpg") %>
+              <% end %>
             </div>
 
             <div class="well tile_caption">

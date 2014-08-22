@@ -6,3 +6,46 @@
 body {
   background: url(http://subtlepatterns.com/patterns/billie_holiday.png);
 }
+
+.tile {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 0 30px 30px;
+    float: left;
+}
+
+.tile_image {
+    width: 100%;
+    img {
+        height: 200px;
+        width: 300px;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+    }
+}
+
+.tile_caption {
+    position: relative;
+    bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    margin: auto;
+    text-align: left;
+    padding-right:5px;
+    word-wrap:normal;
+    width:300px;
+    p {
+			padding-right:10px;
+		}
+		.title {
+			font-weight:bold;
+		}
+}
+
+.tile_row {
+    margin:auto;
+    margin-top: 30px;
+    max-width: 90%;
+}

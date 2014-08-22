@@ -1,0 +1,28 @@
+<div class="jumbotron destination_jumbo">
+  <div class="container">
+    <h1 class="tagline"><%= @island.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+    <div class="tile_row">
+      <% @hotels.each do |hotel| %>
+
+          <%= tag "div", :class=>"tile" %>
+
+            <div class="tile_image">
+
+              <%= image_tag("stock.jpg") %>
+            </div>
+
+            <div class="well tile_caption">
+              <span class="title"><%= hotel.name %></span>
+              <% if !hotel.description.blank? %>
+                <p><%= hotel.description %></p>
+              <% end %>
+            </div>
+
+          </div>
+      <% end %>
+    </div>
+</div>
