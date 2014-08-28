@@ -1,5 +1,6 @@
 class PromosController < ApplicationController
     before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy, :all, :show_admin]
+    layout 'application_nobanner'
 
     def new
         @promo = Promo.new
@@ -37,6 +38,7 @@ class PromosController < ApplicationController
 
     def index
         @promos = Promo.all
+        render :layout => 'application_nobanner'
     end
 
     def all

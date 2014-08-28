@@ -74,7 +74,7 @@ $main-height:340px;
     img{
       width: 100%;
       @include border-radius(2px);
-      opacity:0.9;
+      opacity:0.7;
     }
     p {
       margin-top:5px;
@@ -82,9 +82,15 @@ $main-height:340px;
       font-family:$serify;
     }
   }
+  .pane a:hover{
+    img {
+      opacity:1;
+    }
+  }
+
   $top: 10px;
   $bottom: $top;
-  $full_side: 120px;
+  $full_side: 150px;
   @media (min-width: 992px) {
     .col-md-4:first-of-type {
       padding: $top 0 $bottom $full_side;

@@ -3,6 +3,7 @@ class ReferralLinksController < ApplicationController
 
   def new
     @referral_link = ReferralLink.new
+        render :layout => 'application_nobanner'
   end
 
   def create
@@ -22,6 +23,7 @@ class ReferralLinksController < ApplicationController
 
   def edit
     @referral_link = ReferralLink.find(params[:id])
+        render :layout => 'application_nobanner'
   end
 
   def destroy
@@ -42,5 +44,6 @@ class ReferralLinksController < ApplicationController
   private
     def referral_link_params
       params.require(:referral_link).permit(:name, :url, :path)
+      render :layout => 'application_nobanner'
     end
 end

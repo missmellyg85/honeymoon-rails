@@ -1,7 +1,10 @@
 <div class="row">
+	<h2 class="col-sm-8 col-sm-offset-2">Promotions</h2>
+</div>
+<div class="row">
   <% @promos.each do |promo| %>
-      <div class="col-sm-4">
-        <h3><%= promo.description %></h3>
-      </div>
+      <h3 class="well col-sm-8 col-sm-offset-2 promo">
+        <%= promo.description %>
+      </h3>
   <% end %>
 </div>

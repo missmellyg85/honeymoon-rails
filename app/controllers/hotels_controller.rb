@@ -5,6 +5,7 @@ class HotelsController < ApplicationController
         @hotel = Hotel.new
         @islands = Island.all
         @destinations = Destination.all
+        render :layout => 'application_nobanner'
     end
 
     def create
@@ -27,6 +28,7 @@ class HotelsController < ApplicationController
         @hotel = Hotel.find(params[:id])
         @islands = Island.all
         @destinations = Destination.all
+        render :layout => 'application_nobanner'
     end
 
     def destroy
@@ -43,6 +45,7 @@ class HotelsController < ApplicationController
 
     def all
         @hotels = Hotel.all
+        render :layout => 'application_nobanner'
     end
 
     def show
@@ -51,6 +54,7 @@ class HotelsController < ApplicationController
 
     def show_admin
         @hotel = Hotel.find(params[:id])
+        render :layout => 'application_nobanner'
     end
 
     private

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    get 'contact/index'
+    get 'contact/index' => 'contact#index', as: :contact
 
     get 'destinations/all' => 'destinations#all', as: :destinations_all
     get 'destinations/:id/admin' => 'destinations#show_admin', as: :destination_admin

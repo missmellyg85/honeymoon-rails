@@ -7,6 +7,7 @@ class IslandsController < ApplicationController
         2.times do
             @island.hotels.build
         end
+        render :layout => 'application_nobanner'
     end
 
     def create
@@ -28,6 +29,7 @@ class IslandsController < ApplicationController
         @island = Island.find(params[:id])
         
         @destinations = Destination.all
+        render :layout => 'application_nobanner'
     end
 
     def destroy
@@ -44,6 +46,7 @@ class IslandsController < ApplicationController
 
     def all
         @islands = Island.all
+        render :layout => 'application_nobanner'
     end
 
     def show
@@ -53,6 +56,7 @@ class IslandsController < ApplicationController
 
     def show_admin
         @island = Island.find(params[:id])
+        render :layout => 'application_nobanner'
     end
 
     private
