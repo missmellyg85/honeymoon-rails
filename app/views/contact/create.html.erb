@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact Request</h1>
+    <p><%= @contact.name %> has requested more information.</p>
+    <p>Phone: <%= @contact.phone %></p>
+    <p>Email: <%= @contact.email %></p>
+    <p>Occasion for travel: 
+      <% if !@contact.occasion.blank? %>
+        <%= @contact.occasion %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+    
+    <p>Locations of interest:
+      <% if !@contact.locations.blank? %>
+        <%= @contact.locations %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+  </body>
+</html>

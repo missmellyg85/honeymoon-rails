@@ -1,36 +1,36 @@
-<form role="form">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Name">
+<%= form_for @contact, url: new_contact_path, method: "post", :html => {id: "contact_form"} do |f| %>
+  
+  <div class="form-group">
+      <%= label_tag "name" %>
+      <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
     </div>
     <div class="form-group">
-      <label for="phone">Phone</label>
-      <input type="tel" class="form-control" id="phone" placeholder="Phone">
+      <%= label_tag "phone" %>
+      <%= f.phone_field :phone, placeholder: "Phone", class: "form-control" %>
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <%= label_tag "name", "Email address" %>
+      <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
     </div>
       <div class="form-group">
-        <label for="occasion">Occasion for travel</label>
-        <input type="text" class="form-control" id="occasion" placeholder="Occasion">
+      <%= label_tag "occasion", "Occasion for travel" %>
+      <%= f.text_field :occasion, placeholder: "Occasion", class: "form-control" %>
       </div>
   <div class="form-group">
-    <label for="locations">Locations of interest</label>
-    <% @destinations.each do |d| %>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="<%= d.name %>">
-            <%= d.name %>
-          </label>
-        </div>
-    <% end %>
+      <%= label_tag "locations", "Locations of interest" %>
+     <% @destinations.each do |d| %>
+     <div class="checkbox">
+        <%= check_box_tag "contact[locations][]", d.name, false, id: "contact_locations_"+d.name %>
+        <%= label_tag "contact_locations_"+d.name, d.name %>
+    </div>
+      <% end %>
     <div class="checkbox">
-      <label>
-        <input type="checkbox" value="other">
-        Other
-      </label>
+        <input id="contact_locations_other" name="contact[locations][]" type="checkbox" value="Other">
+        <label for="contact_locations_other">Other</label>
     </div>
   </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+
+
+<% end %>
+
