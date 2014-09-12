@@ -1,24 +1,32 @@
-<%= nested_form_for @island, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
+<%= nested_form_for @island, :html => {:class => "well", :role => "form" } do |f| %>
+<div class="row">
+  <div class="form-group col-sm-6">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :maxlength => '255', :size=>'25',:class => 'text_field' %>
+      <%= f.text_field :name, :maxlength => '255', :size=>'25',:class => 'text_field form-control' %>
     </div>
   </div>
-  <div class="control-group">
+  <div class="form-group col-sm-6">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :description, :maxlength => '2000', :size=>'150', :class => 'text_area' %>
+      <%= f.text_area :description, :maxlength => '2000', :size=>'150', :class => 'text_area form-control' %>
     </div>
   </div>
-  <div class="control-group">
+</div>
+<div class="row">
+  <div class="form-group col-sm-6">
     <%= f.label :destination_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name', @island.destination_id)) %>
+      <%= f.select(
+        :destination_id, 
+        options_from_collection_for_select(@destinations, 'id', 'name', @island.destination_id),
+        {},
+        html_options = {:class => 'form-control'}) %>
     </div>
   </div>
+</div>
 
-  <p>Hotels:</p>
+  <h3>Hotels:</h3>
   <%= f.fields_for :hotels %>
   <p><%= f.link_to_add "Add a hotel", :hotels %></p>
 

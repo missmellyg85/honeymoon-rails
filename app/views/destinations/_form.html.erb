@@ -1,27 +1,33 @@
-<%= nested_form_for @destination, :html => {:class => 'form-horizontal'} do |f| %>
-    <div class="control-group">
-      <%= f.label :name, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :name, :maxlength => '255', :size=>'25', :class => 'text_field' %>
+<%= nested_form_for @destination, :html => {:class => 'well', :role => 'form'} do |f| %>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :name, :class => '' %>
+      <div class="">
+        <%= f.text_field :name, :maxlength => '255', :size=>'25', :class => 'text_field form-control' %>
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group col-sm-6">
       <%= f.label :path, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :path, :maxlength => '255', :size=>'25', :class => 'text_field' %>
+        <%= f.text_field :path, :maxlength => '255', :size=>'25', :class => 'text_field form-control' %>
       </div>
     </div>
-    <div class="control-group">
+  </div>
+  <div class="row">
+    <div class="form-group">
       <h2>Islands:</h2>
       <%= f.fields_for :islands %>
       <p><%= f.link_to_add "Add an island", :islands %></p>
     </div>
-    <div class="control-group">
+  </div>
+  <div class="row">
+    <div class="form-group">
       <h2>Hotels:</h2>
       <%= f.fields_for :hotels %>
       <p><%= f.link_to_add 'Add a hotel', :hotels %></p>
     </div>
+  </div>
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

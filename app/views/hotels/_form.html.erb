@@ -1,26 +1,37 @@
-<%= form_for @hotel, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :maxlength => '255', :size=>'25', :class => 'text_field' %>
+<%= form_for @hotel, :html => { :class => 'well', :role => "role" } do |f| %>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :maxlength => '255', :size=>'25', :class => 'text_field form-control' %>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :maxlength => '2000', :size=>'150', :class => 'text_area form-control' %>
+      </div>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :description, :maxlength => '2000', :size=>'150', :class => 'text_area' %>
+  <div class="row">
+    <div class="form-group col-sm-5">
+      <%= f.label :island_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select(
+          :island_id, 
+          options_from_collection_for_select(@islands, 'id', 'name', @hotel.island_id), {include_blank: 'None'},
+          html_options = {:class => 'form-control'}) %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :island_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select(:island_id, options_from_collection_for_select(@islands, 'id', 'name', @hotel.island_id), {include_blank: 'None'}) %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :destination_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select(:destination_id, options_from_collection_for_select(@destinations, 'id', 'name', @hotel.island_id), {include_blank: 'None'}) %>
+    <div class="col-sm-2 text-center"><h3>OR</h3></div>
+    <div class="form-group col-sm-5">
+      <%= f.label :destination_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select(
+          :destination_id, 
+          options_from_collection_for_select(@destinations, 'id', 'name', @hotel.island_id), {include_blank: 'None'},
+          html_options = {:class => 'form-control'}) %>
+      </div>
     </div>
   </div>
   <div class="form-actions">

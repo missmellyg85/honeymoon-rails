@@ -1,13 +1,13 @@
-<div class="control-group">
+<div class="form-group col-sm-6">
   <%= f.label :name, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :name, :maxlength => '25', :class => 'text_field' %>
+    <%= f.text_field :name, :maxlength => '25', :class => 'text_field form-control' %>
   </div>
 </div>
-<div class="control-group">
+<div class="form-group col-sm-6">
   <%= f.label :description, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_area :description, :maxlength => '25', :class => 'text_area' %>
-    <p><%= f.link_to_remove "Remove this hotel" %></p>
+    <%= f.text_area :description, :maxlength => '25', :class => 'text_area form-control' %>
+    <p class="pull-right"><%= f.link_to_remove "Remove this hotel" %></p>
   </div>
 </div>
