@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="promo-carousel" class="carousel slide" data-ride="carousel">
+  <div id="promo-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <% slideCounter = 0 %>
@@ -16,9 +16,7 @@
       <% @promos.each do |promo| %>
 
           <div class="item <%= slideCounter == 0 ? 'active' : '' %>">
-            <img src="http://i2.cdn.turner.com/cnn/dam/assets/130530161523-100-beaches-crane-beach-horizontal-gallery.jpg"
-                 alt="<%= promo.description %>" class="carousel-img">
-
+            
             <div class="carousel-caption">
               <%= promo.description %>
             </div>
@@ -26,13 +24,8 @@
           <% slideCounter += 1 %>
       <% end %>
     </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#promo-carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#promo-carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
   </div>
+  <script>
+            $("#promo-carousel").carousel();
+        </script>
 </div>
