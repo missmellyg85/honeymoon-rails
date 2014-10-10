@@ -1,16 +1,13 @@
 <footer>
 		<div class="col-sm-6">
-		  <p>&copy; The Travel Source <%= Time.now.year %></p>
-		  <p>816.525.9859 | <%= mail_to "trvlsrc@sbcglobal.net" %></p>
+		  <p>The Travel Source &copy; <%= Time.now.year %> | 816.525.9859 | <%= mail_to "trvlsrc@sbcglobal.net" %></p>
 		</div>
 		<div class="col-sm-6 text-right">
-			<p>
-				<%= link_to(image_tag("fb.png"), "https://www.facebook.com/trvlsrc", :target => "_blank") %>
-			</p>
 		  <p>
 		  	<%= link_to "Destinations", destinations_path %> | 
 		  	<%= link_to "Promotions", promos_path %> | 
-		  	<%= link_to "Contact Us", contact_path %>
+		  	<%= link_to "Contact Us", contact_path %> |
+		  	<%= link_to(image_tag("fb.png"), "https://www.facebook.com/trvlsrc", :target => "_blank") %>
 		  </p>
 		</div>
 </footer>
